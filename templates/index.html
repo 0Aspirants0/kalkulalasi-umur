@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body><br><br><br><br>
+    <h1>Age Calculator</h1>
+    <form id="ageForm">
+        <label for="birthdate">Tanggal Lahir:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+        <button type="button" onclick="calculateAge()">Hitung Umur</button>
+    </form>
+    <div id="result"></div><br><br><br><br><br><br>
+
+    <script>
+        function calculateAge() {
+            const birthdate = $('#birthdate').val();
+            if (!birthdate) {
+                alert('Silakan masukkan tanggal lahir');
+                return;
+            }
+
+            $.ajax({
+                url: '/calculate_age',
+                type: 'POST',
+                data: { birthdate: birthdate },
+                success: function(response) {
+                    $('#result').html(`
+                        <p>Umur Anda sekarang adalah ${response.umur} tahun.</p>
+                        <p>Umur Anda akan menjadi ${response.ulang_tahun} tahun dalam waktu ${response.sisa_hari} hari.</p>
+                    `);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/4k.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffeeee;
+    padding: 20px;
+    text-shadow: 0 0px 20px rgba(30, 30, 30, 0.8);
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #fdfdfd;
+    text-shadow: 0 0px 20px rgba(30, 30, 30, 0.8);
+
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c4caf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #b7ca3e;
+    transform: scale(1.05);
+}
+
+#result {
+    max-width: 300px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+#result p {
+    margin: 0;
+}
